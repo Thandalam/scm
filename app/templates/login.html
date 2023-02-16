@@ -1,0 +1,216 @@
+              <!DOCTYPE html>
+              <html lang="en">
+                <head>
+                  <!-- <link rel="stylesheet" href="static/css/login.css" /> -->
+                  <link rel="stylesheet" href=
+              "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+                      integrity=
+              "sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+                      crossorigin="anonymous"/> 
+                      
+                  <title>Login</title>
+                </head>
+                <div class="Login-box">
+                  <h1>Login</h1>
+                  <form method="post" action="/">
+                    <label>User name</label>
+                    <input type="text" placeholder="" name="email" id="username" required/>
+
+                    <label>Password</label>
+                    <input type="password"
+                      placeholder=""
+                      name="password"
+                      id="password"
+                      required
+                    />
+                    <br />
+                    <br />
+
+
+                        <div id="captcha">
+                        </div>
+                        <input type="text" placeholder="Captcha" id="cpatchaTextBox"/><br><br>
+                        <!-- <button type="submit">Submit</button> -->
+                         
+                          <input type ="submit" value="login" id="login" class="login-btn"/>
+                
+                            <button type="button" class="btn btn-primary" onclick="validateCaptcha()">
+                            check</button> 
+
+                    
+               
+                    
+              
+                  
+                  </form>
+                  <!-- <p>Not have an account?<a href="/signup" id="signupbtn"></a>signuphere</a></p>  -->
+                  
+       <p>Not have an account?<a  href="/signup">signuphere</a></p> 
+       <!-- <a href="/index"></a>   -->
+  
+                  <br />
+                </div>
+                <style>
+                  body{
+    background-image: url('https://images.unsplash.com/photo-1605745341112-85968b19335b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyZ28lMjBzaGlwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+    background-size: cover;                  
+      /* text-align: center; */
+  }
+
+   .Login-box {
+      width: 383px;
+      height: auto;
+      margin: auto;
+      background-color: white;
+      text-align: center;
+      margin-top: 41px;
+    }
+
+    h1 {
+      text-align: center;
+      padding-top: 15px;
+    }
+    .field button{
+      cursor: pointer;
+      background-color: blueviolet;
+    }
+
+    form {
+      width: 300px;
+      margin-left: 20px;
+    }
+    form label {
+      display: flex;
+      margin-top: 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    form input {
+      width: 100%;
+      padding: 7px;
+      border: none;
+      border: 1px solid gray;
+      border-radius: 6px;
+    }
+    input[type='button'] {
+      width: 300px;
+      height: 35px;
+      margin-top: 20px;
+      border: none;
+      background-color: aqua;
+      color: white;
+      cursor: pointer;
+    }
+    .login{
+      width: 100px;
+      display: flex;
+      background-color: blueviolet;
+    }
+    p {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 15px;
+      color: red;
+    }
+    canvas{
+/*prevent interaction with the canvas*/
+pointer-events:none;
+}
+    .login-btn
+    {
+      
+background-color: aqua;
+width: 100px;
+height: 35px;
+outline: none;
+cursor: pointer;
+font-size: 16px;
+padding: 10px,85px;
+text-align: center;
+}
+
+ 
+                
+                </style>
+                
+  
+
+                <body onload="createCaptcha()">
+                  
+
+                  <script>
+                    var code;
+              function createCaptcha() {
+                var buttoncheck= document.getElementById("login");
+                buttoncheck.disabled = true;
+                //clear the contents of captcha div first 
+                document.getElementById('captcha').innerHTML = "";
+                var charsArray =
+                "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@!#$%^&*";
+                var lengthOtp = 6;
+                var captcha = [];
+                for (var i = 0; i < lengthOtp; i++) {
+                  //below code will not allow Repetition of Characters
+                  var index = Math.floor(Math.random() * charsArray.length + 1); //get the next character from the array
+                  if (captcha.indexOf(charsArray[index]) == -1)
+                    captcha.push(charsArray[index]);
+                  else i--;
+                }
+                var canv = document.createElement("canvas");
+                canv.id = "captcha";
+                canv.width = 100;
+                canv.height = 50;
+                var ctx = canv.getContext("2d");
+                ctx.font = "25px Georgia";
+                ctx.strokeText(captcha.join(""), 0, 30);
+                //storing captcha so that can validate you can save it somewhere else according to your specific requirements
+                code = captcha.join("");
+                document.getElementById("captcha").appendChild(canv); // adds the canvas to the body element
+              }
+              passwordInput.addEventListener("input", function() {
+  if (passwordInput.validity.patternMismatch) {
+    passwordInput.setCustomValidity("Password must contain at least 8 characters, including a lowercase letter, an uppercase letter, a number, and a special character (@, #, $, %, ^, &, +, =).");
+  }
+       else {
+            alert("Succesfully signed");
+          
+            
+          }
+          
+        })
+      
+         
+              function validateCaptcha() {
+                event.preventDefault();
+                debugger
+                var buttoncheck= document.getElementById("login");
+                buttoncheck.disabled = true;
+                if (document.getElementById("cpatchaTextBox").value == code) {
+                  buttoncheck.disabled= false;
+                  alert(" succesful")
+                  // passwordInput.addEventListener("input", function()
+                  // {
+
+         
+                }
+              
+                else
+                {
+                  alert("Invalid try Again");
+                  createCaptcha();
+
+                }
+              }
+              
+            
+              
+
+
+
+                  </script>
+                  </body>
+                  </html>
+                    
+                
+
+                  

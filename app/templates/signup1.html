@@ -1,0 +1,166 @@
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            
+            <!-- <link rel="stylesheet" href="static/css/signup1.css" /> -->
+            <link rel="stylesheet" href=
+            "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+                    integrity=
+            "sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+                    crossorigin="anonymous"/> 
+            <title>Signup</title>
+          </head>
+          <body>
+
+                <div class="signup-box">
+            
+                  <h1>Sign up</h1>
+                  <form method="post", action="/signup">            
+                    <label>User Name</label>
+                    <input type="username" placeholder="" name="username" id="username" required />
+                    <label>Email</label>
+                    <input type="email" placeholder="" name="email" id="email" required />
+            
+                    <label>Password</label>
+                    <input type="password" placeholder="" name="password" id="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}"/>
+                    <label>ConfirmPassword</label>
+                    <input type="password" placeholder="" name="cpassword" id="cpassword"/><br><br>
+                   
+                     <button type ="submits" value="signup" class="signup-btn">Submit</button>
+                
+                    
+                 
+                <p>Already have an account?<a href="/">loginhere</a></p>
+  
+              {% if message %}
+                <span>{{message}}</span>
+                {% endif %}   
+              
+
+
+
+                  
+                    
+            
+            
+              </form>
+            </div>
+            <style>
+              body{
+    background-image: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hpcHBpbmd8ZW58MHx8MHx8&w=1000&q=80');
+    background-size: cover; 
+      text-align: center;
+    }
+
+    .signup-box
+{
+  width: 374px;
+  height: auto;
+  margin:auto;
+  background-color: white;
+  margin-top: 67px
+  
+  
+}
+.signup-btn
+{
+background-color: aqua;
+width: 100px;
+height: 35px;
+outline: none;
+cursor: pointer;
+font-size: 16px;
+padding: 10px,85px;
+}
+
+
+    h1 {
+      text-align: center;
+      padding-top: 15px;
+    }
+
+    form {
+      width: 300px;
+      margin-left: 20px;
+    }
+    form label {
+      display: flex;
+      margin-top: 20px;
+      font-size: 20px;
+      /* display: flex;  */
+      cursor: pointer;
+    }
+    form input {
+      width: 94%;
+      padding: 7px;
+      border: none;
+      border: 1px solid gray;
+      border-radius: 6px;
+      
+      overflow: hidden;
+      max-height: 65px;
+    }
+    a{
+      color:navy blueviolet;
+    }
+  
+    
+  
+    
+    p {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 15px;
+      color:black;
+    }
+
+
+            </style>
+
+                  
+           
+            
+          
+          <script>
+          
+          
+            
+            function auth()
+            {
+              var username = document.getElementById("username").value;
+              var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
+          var confirmpassword = document.getElementById("cpassword").value;
+          
+
+
+         if (username == "" || email == "" || password == ""|| cpassword =="") {
+            document.getElementById("errorMsg").innerHTML = "Please fill the required fields"
+            return false;
+            
+            }
+          
+            
+          else {
+            alert("Succesfully signed");
+          
+            
+          }
+
+passwordInput.addEventListener("input", function() {
+  if (passwordInput.validity.patternMismatch) {
+    passwordInput.setCustomValidity("Password must contain at least 8 characters, including a lowercase letter, an uppercase letter, a number, and a special character (@, #, $, %, ^, &, +, =).");
+  }
+       else {
+            alert("Succesfully signed");
+          
+            
+          }
+          
+        })
+      }
+         
+
+            </script>
+            </body>
+            </html>

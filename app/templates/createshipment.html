@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create a New Shipment Page
+        </title>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+        <!-- <link rel="stylesheet" href="static/css/shipment.css" /> -->
+        </head>
+        <h1>Create a Shipment Page</h1><br>
+
+         <body>
+     
+        <form method="post", action="/createshipments">
+          <!-- <input type="text" class="numbers" name="field_name" /> -->
+
+
+          
+         
+            <label> Shipment_Invoice_Number</label>
+            <input type="text"name="Shipment_invoicenumber"class="numbers" placeholder="Shipment/invoiceNumber"required><br>
+           
+            <label>Container_Number</label>
+            <input type="text"name ="Container_number" class="numbers"placeholder="Container Number"required><br>
+            <label>Description</label>
+            <input type="text" class="input" name ="Description" placeholder="Shipment Description"required onkeypress="return /[0-9a-zA-Z]/i.test(event.key)"><br>
+            <label>Route_Details</label>
+
+            <select name="Route_details" id="route_details" placeholder="Route Details">
+              <option value="SelectRoute">SelectRoute</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Tirupati">Tirupati</option>
+            </select><br>
+            <label>Goods_Type</label>
+
+            <select name="Goods_type" id="goods_type" placeholder="GoodsType">
+              <option value="Goods Type">Goods Type</option>
+
+            <option value="Cosmetics">Cosmetics</option> 
+              <option value="Food">Food</option>
+              <option value="Pharmacy">Pharmacy</option>
+              <!-- <option value="Producergoods">producergoods</option> -->
+            
+            </select><br>
+            <label>Device</label>
+
+            <select name="Device" id="device" placeholder="Device">
+              <option value="Selectdevice">Selectdevice</option>
+              <option value="6789">6789</option>
+              <option value="1308">1308</option>
+              <option value="5040">5040</option>
+            
+            </select><br>
+            <label for="Expected Delivery Date">Delivery_date</label>
+
+            <input type="date" id="start" name="Expected_Delivary_Date"
+            Expected_Delivery_Date="Expected_Delivery_Date" value="2023-05"><br>
+            <label> Po_Number</label>
+                <input type="text" name="Po_number"class="numbers" placeholder="Po Number"><br>
+            <label>Delivery_number</label>
+                <input type="text" name="Delivery_number"class="numbers" placeholder="Delivery Number"><br>
+            <label>NDCNumber</label>
+                <input type="text" name="Ndc_number"class="numbers" placeholder="Ndc Number"><br>
+            <label>Batch_Id</label>
+                <input type="text" name="Batch_id"class="numbers" placeholder="Batch Id"><br>
+            <label>Serialnumberofgoods </label>
+                <input type="text" name="Serialnumberofgoods"class="numbers" placeholder="Serial Number of goods"><br><br><br>
+                
+                   <!-- <input type="reset" value ="Cancel Shipment">  -->
+                   <button type="submit">
+                    create shipment &nbsp;&nbsp;
+                    </button>
+                   <button type="reset">
+                    cancel shipment
+                    </button>
+                   
+                  
+                <br>  
+                {% if message %}
+                <span>{{message}}</span>
+                {% endif %}               
+   
+            </form> 
+       
+        </div>
+        <style>
+          body{ 
+    background-image: url('https://thumbs.dreamstime.com/b/vector-dry-cargo-ship-sea-loaded-boat-vector-illustration-dry-cargo-ship-sea-ocean-commerce-shipping-delivery-133424842.jpg');
+    background-size: cover;
+     font-family: 'Roboto',sans-serif;
+     
+     
+  
+     
+ }
+    
+
+ .button-box
+ {
+     width: 400px;
+     height:200px;
+     margin:auto;
+     background-color:brown;
+     border-radius: 3px;
+ 
+ }
+ h1{
+   text-align: center;
+   
+   padding-top: 10px;
+  
+   padding-left: 24PX;
+   font-size: 30px;
+  
+ }
+ 
+  label,select,option,input{
+   display:inline-block;
+   width:200px;
+   height:42px;
+
+   
+     
+
+  }
+
+ input[type ="button"]{
+     width: 120px;
+     height: 35px;
+     margin-top: 20px;
+     border: none;
+     background-color:brown;
+     color:white
+     
+     
+ }
+ 
+  /* label,select,option,input{
+   display:inline-block;
+   width:200px;
+   height:42px;
+   
+     
+
+  }
+*/
+ input[type ="button"]{
+     width: 120px;
+     height: 35px;
+     margin-top: 20px;
+     border: none;
+     background-color:brown;
+     color:white
+     
+     
+ }
+ form {
+display: block;
+margin-top: 0em;
+margin-left:18rem ;
+}
+        </style>
+   
+
+       
+       <script>
+          
+     function auth()
+     {
+      var shipment_invoice_number  = document.getElementById("shipment_invoice_number").value;
+      var container_number = document.getElementById("container_number").value;
+
+	var description = document.getElementById("description").value;
+  var route_details  = document.getElementById("route_details").value;
+  var goods_type = document.getElementById("goods_type").value;
+	var device = document.getElementById("device").value;
+	var delivery_date = document.getElementById("delivery_date").value;
+  var ndcnumber = document.getElementById("ndcnumber").value;
+	var batch_id = document.getElementById("batch_id").value;
+	var serialnumberofgoods  = document.getElementById("serialnumberofgoods").value;
+  if (shipment_invoice_number == "" || container_number == "" || description == ""|| route_details==""||
+      goods_type == "" || device == "" || delivery_date == ""||ndcnumber ==""||batch_id==""||serialnumberofgoods==""){
+  
+  
+		document.getElementById("errorMsg").innerHTML = "Please fill the required fields"
+		return false;
+    
+    }
+    
+	 else {
+    alert("Succesfully signed");
+		
+	}
+}
+
+$("input.numbers").keypress(function(event) {
+  return /\d/.test(String.fromCharCode(event.keyCode));
+});
+
+
+
+
+
+
+</script>
+
+             </body>
+        </html>
+      
+    
+      

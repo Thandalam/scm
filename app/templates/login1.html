@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity=
+"sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Login</title>
+    <div class="Login-box">
+      <body onload="createCaptcha()"></body>
+        <h1>Login</h1>
+        <form method="post" action="/">
+          <label>User name</label>
+          <input type="text" placeholder="" name="loginuser" id="username" required/>
+   
+          <label>Password</label>
+          <input type="password"
+            placeholder=""
+            name="loginPassword"
+            id="password"
+            required
+          />
+          <br />
+          <br />
+  
+   
+              <div id="captcha">
+              </div>
+              <input type="text" placeholder="Captcha" id="cpatchaTextBox"/>
+              <!-- <button type="submit">Submit</button> -->
+              </div>
+               <button type="button" class="btn btn-primary">
+                Login</button> 
+                 <!-- <input type ="submit" value="login" class="login-btn"onclick="validateCaptcha()"/></center> -->
+       
+     
+          
+  
+          <br />
+          <br />
+          <!-- <input type ="submit" value ="submit" class="submit-btn"  -->
+          
+        </a>
+        </p> 
+        </form>
+      
+  
+        
+        <br />
+      </div>
+      <p>Not have an account?<a onclick href="signup" id="signupbtn">signuphere</a></p>
+  
+      
+        <!-- <p><a onclick href="/index" >login</a></p>  -->
+    </body>
+  </html>
+  
+    
+    <style>
+        body{
+            /* background-image: url('https://images.pexels.com/photos/12810604/pexels-photo-12810604.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
+               background-image: url('https://images.unsplash.com/photo-1605745341112-85968b19335b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyZ28lMjBzaGlwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+               background-size: cover;
+        }
+               
+      .Login-box {
+    background-color: white;
+    text-align: center;
+    width: 344px;
+    height: 419px;
+    margin:auto;
+    
+      }
+      
+      
+
+      h1 {
+        text-align: center;
+        padding-top: 15px;
+      }
+      .field button{
+        cursor: pointer;
+        background-color: blueviolet;
+      }
+      .btn-primary
+      {
+        height: 36px;
+    margin-top: -110px;
+    padding-bottom: 15px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    margin-left: 353px;
+    width: 77px;
+      }
+
+      form {
+        width: 300px;
+        margin-left: 20px;
+      }
+      form label {
+        display: flex;
+        margin-top: 20px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      form input {
+        width: 100%;
+        padding: 7px;
+        border: none;
+        border: 1px solid gray;
+        border-radius: 6px;
+      }
+      input[type='button'] {
+        width: 300px;
+        height: 35px;
+        margin-top: 20px;
+        border: none;
+        background-color: aqua;
+        color: white;
+        cursor: pointer;
+      }
+      
+      p {
+        text-align: center;
+        padding-top: 20px;
+        font-size: 20px;
+      }
+      canvas{
+  /*prevent interaction with the canvas*/
+  pointer-events:none;
+}
+      
+
+      
+    </style>
+
+     <script>
+      var code;
+function createCaptcha() {
+  //clear the contents of captcha div first 
+  document.getElementById('captcha').innerHTML = "";
+  var charsArray =
+  "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@!#$%^&*";
+  var lengthOtp = 6;
+  var captcha = [];
+  for (var i = 0; i < lengthOtp; i++) {
+    //below code will not allow Repetition of Characters
+    var index = Math.floor(Math.random() * charsArray.length + 1); //get the next character from the array
+    if (captcha.indexOf(charsArray[index]) == -1)
+      captcha.push(charsArray[index]);
+    else i--;
+  }
+  var canv = document.createElement("canvas");
+  canv.id = "captcha";
+  canv.width = 100;
+  canv.height = 50;
+  var ctx = canv.getContext("2d");
+  ctx.font = "25px Georgia";
+  ctx.strokeText(captcha.join(""), 0, 30);
+  //storing captcha so that can validate you can save it somewhere else according to your specific requirements
+  code = captcha.join("");
+  document.getElementById("captcha").appendChild(canv); // adds the canvas to the body element
+}
+function validateCaptcha() {
+  event.preventDefault();
+  debugger
+  if (document.getElementById("cpatchaTextBox").value == code) {
+    window.location.assign("/index");
+    alert("Login Succesful")
+  }else{
+    alert("Invalid ");
+    createCaptcha();
+  }
+}
+     </script>
+      
+   
+
+    
