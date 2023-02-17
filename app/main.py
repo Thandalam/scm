@@ -10,10 +10,6 @@ from router import router
 
 
 
-
-
-
-
 app = FastAPI()
 # Create an instance of the Jinja2Templates class
 app.include_router(router.router)
