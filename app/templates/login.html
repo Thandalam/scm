@@ -7,31 +7,35 @@
                       integrity=
               "sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
                       crossorigin="anonymous"/> 
+                      <!-- title of the page -->
                       
                   <title>Login</title>
                 </head>
                 <div class="Login-box">
-                  <h1>Login</h1>
+
+                 <!-- Page heading -->                  
+                 <h1>Login</h1>
+                   <!-- login form -->
                   <form method="post" action="/">
+                      <!-- Username field -->
+                     
                     <label>User name</label>
                     <input type="text" placeholder="" name="email" id="username" required/>
-
+                           <!-- password field -->
                     <label>Password</label>
-                    <input type="password"
-                      placeholder=""
-                      name="password"
-                      id="password"
+                    <input type="password"placeholder=""
+                      name="password" id="password"
                       required
                     />
                     <br />
-                    <br />
+                   
 
-
+                           <!-- captacha field -->
                         <div id="captcha">
                         </div>
                         <input type="text" placeholder="Captcha" id="cpatchaTextBox"/><br><br>
                         <!-- <button type="submit">Submit</button> -->
-                         
+                           <!-- submit button -->
                           <input type ="submit" value="login" id="login" class="login-btn"/>
                 
                             <button type="button" class="btn btn-primary" onclick="validateCaptcha()">
@@ -43,8 +47,7 @@
               
                   
                   </form>
-                  <!-- <p>Not have an account?<a href="/signup" id="signupbtn"></a>signuphere</a></p>  -->
-                  
+               <!-- Link to signup page -->    
        <p>Not have an account?<a  href="/signup">signuphere</a></p> 
        <!-- <a href="/index"></a>   -->
   

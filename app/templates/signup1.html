@@ -8,42 +8,48 @@
                     integrity=
             "sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
                     crossorigin="anonymous"/> 
+                    <!-- title of the page -->
             <title>Signup</title>
           </head>
           <body>
-
+            
+      
+             
                 <div class="signup-box">
+                     <!-- Page heading -->
             
                   <h1>Sign up</h1>
-                  <form method="post", action="/signup">            
+                   <!-- Signup form -->
+                  <form method="post", action="/signup"> 
+                     <!-- Username field -->
+                                
                     <label>User Name</label>
                     <input type="username" placeholder="" name="username" id="username" required />
+                    
+                          <!-- Email field -->
                     <label>Email</label>
                     <input type="email" placeholder="" name="email" id="email" required />
-            
+                       
+                        <!-- Password field -->
                     <label>Password</label>
                     <input type="password" placeholder="" name="password" id="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}"/>
+                           <!-- Confirm Password field -->
+
                     <label>ConfirmPassword</label>
                     <input type="password" placeholder="" name="cpassword" id="cpassword"/><br><br>
-                   
-                     <button type ="submits" value="signup" class="signup-btn">Submit</button>
+                       <!-- Submit button -->
+                     <button type ="submit" value="signup" class="signup-btn">Submit</button>
                 
                     
+                    <!-- Link to login page -->
                  
                 <p>Already have an account?<a href="/">loginhere</a></p>
-  
+                 <!-- span msg -->
               {% if message %}
                 <span>{{message}}</span>
-                {% endif %}   
-              
+                {% endif %}
 
-
-
-                  
-                    
-            
-            
-              </form>
+                         </form>
             </div>
             <style>
               body{

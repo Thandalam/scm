@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <!-- title of the page -->
         <title>Create a New Shipment Page
         </title>
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
         <!-- <link rel="stylesheet" href="static/css/shipment.css" /> -->
         </head>
+         <!-- Page heading -->
         <h1>Create a Shipment Page</h1><br>
 
          <body>
+
+
+            <!-- create a shipment page form -->
      
         <form method="post", action="/createshipments">
           <!-- <input type="text" class="numbers" name="field_name" /> -->
 
 
-          
+          <!-- shipment field -->
          
             <label> Shipment_Invoice_Number</label>
             <input type="text"name="Shipment_invoicenumber"class="numbers" placeholder="Shipment/invoiceNumber"required><br>
-           
+           <!-- container field -->
             <label>Container_Number</label>
             <input type="text"name ="Container_number" class="numbers"placeholder="Container Number"required><br>
+            <!-- description field -->
             <label>Description</label>
             <input type="text" class="input" name ="Description" placeholder="Shipment Description"required onkeypress="return /[0-9a-zA-Z]/i.test(event.key)"><br>
+            <!-- route details -->
             <label>Route_Details</label>
 
             <select name="Route_details" id="route_details" placeholder="Route Details">
@@ -31,6 +38,7 @@
               <option value="Hyderabad">Hyderabad</option>
               <option value="Tirupati">Tirupati</option>
             </select><br>
+            <!-- goods details -->
             <label>Goods_Type</label>
 
             <select name="Goods_type" id="goods_type" placeholder="GoodsType">
@@ -42,6 +50,7 @@
               <!-- <option value="Producergoods">producergoods</option> -->
             
             </select><br>
+            <!-- device details -->
             <label>Device</label>
 
             <select name="Device" id="device" placeholder="Device">
@@ -67,6 +76,7 @@
                 <input type="text" name="Serialnumberofgoods"class="numbers" placeholder="Serial Number of goods"><br><br><br>
                 
                    <!-- <input type="reset" value ="Cancel Shipment">  -->
+                   <!-- submit btn -->
                    <button type="submit">
                     create shipment &nbsp;&nbsp;
                     </button>
@@ -74,7 +84,7 @@
                     cancel shipment
                     </button>
                    
-                  
+                  <!-- span msg -->
                 <br>  
                 {% if message %}
                 <span>{{message}}</span>
