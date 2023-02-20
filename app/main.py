@@ -7,11 +7,13 @@ from pymongo import MongoClient  # For connecting to MongoDB
 from fastapi import FastAPI, Form, Request # For creating the FastAPI application and handling requests
 from passlib.context import CryptContext # For password hashing and verification
 from router import router
-
+from fastapi.staticfiles import StaticFiles
 
 
 app = FastAPI()
 # Create an instance of the Jinja2Templates class
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(router.router)
 
 # app.include_models(models.models)
