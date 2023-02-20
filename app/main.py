@@ -1,4 +1,4 @@
-# Import the necessary modules and packages for the application
+#  Import the necessary modules and packages for the application
 import pymongo # For connecting to MongoDB
 from fastapi.responses import HTMLResponse # For returning an HTML response
 from fastapi.templating import Jinja2Templates  # For rendering HTML templates with Jinja2
