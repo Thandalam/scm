@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 from pathlib import Path
 from kafka import KafkaConsumer
 
+from pymongo import MongoClient
+
 # Get the parent directory of the current file using Path(__file__).resolve().parent
 base_dir = Path(__file__).resolve().parent
 
