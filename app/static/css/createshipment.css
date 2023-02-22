@@ -1,5 +1,5 @@
 body{ 
-    background-image: url('https://thumbs.dreamstime.com/b/vector-dry-cargo-ship-sea-loaded-boat-vector-illustration-dry-cargo-ship-sea-ocean-commerce-shipping-delivery-133424842.jpg');
+    background-image: url('https://cdn.pixabay.com/photo/2021/09/16/21/27/container-ship-6631117__480.jpg');
     background-size: cover;
      font-family: 'Roboto',sans-serif;
      
@@ -32,6 +32,8 @@ body{
    display:inline-block;
    width:200px;
    height:42px;
+   color: aqua;
+    font-weight: 700;
 
    
      

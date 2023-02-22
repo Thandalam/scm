@@ -2,16 +2,16 @@ import json
 import socket
 import os
 from pathlib import Path
-from dotenv import load_dotenv
+
 from kafka import KafkaProducer
 base_dir = Path(__file__).resolve().parent
-load_dotenv()
+
 s = socket.socket()
-HOST=os.getenv("HOST")
-PORT= os.getenv("PORT")
+HOST="localhost"
+PORT= 12345
 s.connect((HOST,int(PORT)))
-bootstrap_servers= os.getenv("bootstrap_servers")
-topic_name= os.getenv("topic_name")
+bootstrap_servers= "localhost:9092"
+topic_name= "Device_data"
 producer=KafkaProducer(bootstrap_servers=bootstrap_servers,value_serializer=lambda m: json.dumps(m).encode("utf-8"),retries=5)
 while True:
     try:

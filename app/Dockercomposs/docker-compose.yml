@@ -2,7 +2,7 @@ version: "3"
 
 services:
   app:
-    image: app:latest
+    image: app1:latest
     ports:
       - 8000:8000
 
@@ -37,19 +37,19 @@ services:
       start_period: 30s
 
   socket:
-    image: socket:1.0
+    image: server:latest
     # build: ./server/
     ports:
       - 12345:12345
 
   producer:
-    image: producer:1.2
+    image: producer:latest
     depends_on:
       kafka:
         condition: service_healthy
 
   consumer:
-    image: consumer:1.2
+    image: consumer:latest
     depends_on:
       kafka:
         condition: service_healthy
