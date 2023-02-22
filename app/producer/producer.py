@@ -2,7 +2,6 @@ import json
 import socket
 import os
 from pathlib import Path
-
 from kafka import KafkaProducer
 base_dir = Path(__file__).resolve().parent
 
