@@ -1,0 +1,73 @@
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            
+            <link rel="stylesheet" href="../static/css/signup1.css" /> 
+            <script src ="../static/js/signup.js"></script>
+            <link rel="stylesheet" href=
+            "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+                    integrity=
+            "sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+                    crossorigin="anonymous"/> 
+                    <!-- title of the page -->
+            <title>Signup</title>
+          </head>
+          <body>
+                
+            
+      
+             
+                <div class="signup-box">
+                     <!-- Page heading -->
+            
+                  <h1>Sign up</h1>
+                   <!-- Signup form -->
+                  <form method="post", action="/signup" onsubmit="return verify()"> 
+                        <div style="text-align: center;">
+                        <span id="errorMsg" style="color: red;"></span></div>
+                     <!-- Username field -->
+                                
+                    <label>User Name</label>
+                    <span id="userMsg" style="color: red;"></span>
+                    <input type="username" placeholder="" name="username" id="username"  />
+                    
+                          <!-- Email field -->
+                    <label>Email</label>
+                    <span id="emailMsg" style="color: red;"></span>
+                    <input type="text" placeholder="" name="email" id="email"  />
+                       
+                        <!-- Password field -->
+                    <label>Password</label>
+                    <span id="passMsg" style="color: red;"></span>
+                    <input type="password" placeholder="" name="password" id="password" >
+                           <!-- Confirm Password field -->
+
+                    <label>ConfirmPassword</label>
+                    <span id="cpassMsg" style="color: red;"></span>
+                    <input type="password" placeholder="" name="cpassword" id="cpassword"/><br><br>
+                       <!-- Submit button -->
+                       <input type ="submit" value="signup" id="signup" class="signup-btn"/>
+                       <!-- <span id="password-match-error" style="color:red;"></span> -->
+                    
+                    <!-- Link to login page -->
+                 
+                <p>Already have an account?<a href="/">loginhere</a></p>
+                       <span> 
+              {% if message %}
+              <span>{{message}}
+                
+              </span>
+              {% endif %} 
+               
+                
+                         </form>
+            </div>
+            
+             
+      
+         
+
+            
+            </body>
+            </html>
+            

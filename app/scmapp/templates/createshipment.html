@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <!-- title of the page -->
+        <title>Create a New Shipment Page
+        </title>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+        <link rel="stylesheet" href="../static/css/createshipment.css" />
+        <script src ="../static/js/createshipment.js"></script>
+       
+         <!--  Page heading -->
+     <h1>Create a Shipment Page</h1><br>
+    
+
+         <body> 
+
+
+            <!-- create a shipment page form -->
+            <div style="text-align: center;">
+            <span id="errorMsg" style="color: red;"></span></div>
+        <form method="post", action="/createshipments" onsubmit="return auth()">
+         
+          <!-- shipment field -->
+         
+            <label> Shipment_invoice_number</label>
+            <input type="number" name="Shipment_invoice_number"class="numbers" placeholder="Shipment/invoiceNumber" id="shipment_invoice_number"><br>
+           
+           
+           <!-- container field -->
+            <label>Container_Number</label>
+            <input type="number"name ="Container_number" class="numbers"placeholder="Container Number" id="container_number"><br>
+           
+            <!-- description field -->
+            <label>Description</label>
+            <input type="text" class="input" name ="Description" placeholder="Shipment Description" onkeypress="return /[0-9a-zA-Z]/i.test(event.key)" id="description"><br>
+            <!-- route details -->
+            <label>Route_Details</label>
+
+            <select name="Route_details" id="route_details" placeholder="Route Details">
+              <option value="SelectRoute">SelectRoute</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Tirupati">Tirupati</option>
+            </select><br>
+            <!-- goods details -->
+            <label>Goods_Type</label>
+
+            <select name="Goods_type" id="goods_type" placeholder="GoodsType">
+              <option value="Goods Type">Goods Type</option>
+
+            <option value="Cosmetics">Cosmetics</option> 
+              <option value="Food">Food</option>
+              <option value="Pharmacy">Pharmacy</option>
+              
+            
+            </select><br>
+            <!-- device details -->
+            <label>Device</label>
+
+            <select name="Device" id="device" placeholder="Device">
+              <option value="Selectdevice">Selectdevice</option>
+              <option value="6789">6789</option>
+              <option value="1308">1308</option>
+              <option value="5040">5040</option>
+            
+            </select><br>
+            <label for="Expected Delivery Date">Delivery_date</label>
+
+            <input type="date" id="start" name="Expected_Delivary_Date"
+             Expected_Delivery_Date="Expected_Delivery_Date" value="2023-05"><br>
+            <label> Po_Number</label>
+                <input type="number" name="Po_number"class="numbers" placeholder="Po Number" id="po_number"><br>
+               
+            <label>Delivery_number</label>
+                <input type="number" name="Delivery_number"class="numbers" placeholder="Delivery Number" id="delivary_number"><br>
+                
+            <label>NDC_Number</label>
+                <input type="number" name="Ndc_number"class="numbers" placeholder="Ndc Number" id="ndcnumber"><br>
+                
+            <label>Batch_Id</label>
+                <input type="number" name="Batch_id"class="numbers" placeholder="Batch Id" id="batch_id"><br>
+             
+            <label>Serialnumberofgoods </label>
+                <input type="number" name="Serialnumberofgoods"class="numbers" placeholder="Serial Number of goods" id="serialnumberofgoods"><br><br><br>
+               
+                   <!-- submit btn -->
+                   <input type="submit" value="create shipment">
+                     <!-- &nbsp;&nbsp;
+                    </button> -->
+                   <input type="reset" value="cancel shipment">
+                    
+                    <!-- </button> -->
+                   
+                  <!-- span msg -->
+                <br>  
+               
+            </form> 
+       
+        </div>
+        {% if message %}
+    <span>{{message}}</span>
+    {% endif %}               
+
+        
+   
+
+      
+             </body>
+        </html>
+      
+    
+      

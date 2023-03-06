@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <link rel="stylesheet" href="static/css/login.css" /> -->
+     
+    <link rel="stylesheet" href="../static/css/login.css" /> 
+    <script src ="../static/js/login.js"></script>
+    <link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity=
+"sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous"/> 
+        <!-- title of the page -->
+        
+    <title>Login</title>
+  </head>
+  <body onload="createCaptcha()">
+  <div class="Login-box">
+
+   <!-- Page heading -->                  
+   <h1>Login</h1>
+     <!-- login form -->
+    <form method="post" action="/">
+        <!-- Username field -->
+       
+      <label>User name</label>
+      <input type="text" placeholder="" name="email" id="username" required/>
+             <!-- password field -->
+      <label>Password</label>
+      <input type="password"placeholder=""
+        name="password" id="password"
+        required
+      />
+      <br />
+     
+
+             <!-- captacha field -->
+          <div id="captcha">
+          </div>
+          <input type="text" placeholder="Captcha" id="cpatchaTextBox"/><br><br>
+          <!-- <button type="submit">Submit</button> -->
+             <!-- submit button -->
+            <input type ="submit" value="login" id="login" class="login-btn"/>
+  
+              <button type="button" class="btn btn-primary" onclick="validateCaptcha()">
+              check</button> 
+
+      
+ 
+      
+
+    
+   
+ <!-- Link to signup page -->    
+<p>Not have an account?<a  href="/signup">signuphere</a></p> 
+<!-- <a href="/index"></a>   -->
+<span> 
+  {% if message %}
+  <span>{{message}}
+    
+  </span>
+  {% endif %} 
+   
+
+    
+  </div>
+</form>
+</body>
+</html>

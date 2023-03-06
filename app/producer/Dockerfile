@@ -1,6 +1,7 @@
 FROM python:3.9
-WORKDIR /app
+WORKDIR /app/producer
 RUN pip install  kafka-python
-COPY producer.py .
-CMD ["python","producer.py"]
+RUN pip install python-dotenv
+COPY  . .
+CMD ["python3","producer.py"]
 

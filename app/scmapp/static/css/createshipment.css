@@ -1,0 +1,73 @@
+body{ 
+    
+    background-image: url('https://img.freepik.com/premium-photo/container-ship-arriving-commercial-port_35024-895.jpg?w=996');
+    background-size: cover;
+    /* background-image: url(back.gif);  */
+    font-family: 'Roboto',sans-serif;
+    overflow: hidden;
+    
+     
+     
+  
+     
+ }
+    
+
+ /* .button-box
+ {
+     width: 400px;
+     height:200px;
+     margin:auto;
+     background-color:brown;
+     border-radius: 3px;
+     margin-right: 10px; */
+     .button
+     {
+     background-color: white;
+     width: 100px;
+     height: 35px;
+     outline: none;
+     cursor: pointer;
+     font-size: 16px;
+     padding: 10px,85px;
+     text-align: center;
+     }
+     
+     
+ 
+ h1{
+   text-align: center;
+   
+   padding-top: 10px;
+  
+   padding-left: 24PX;
+   font-size: 30px;
+   color: yellow;
+ }
+ 
+ 
+  label,select,option,input,::placeholder{
+   display:inline-block;
+   width:217px;
+   height:42px;
+   /* font-size: 700px; */
+   /* color: blue; */
+   color:darkblue;
+  font-weight: 700;
+  }
+ 
+   
+     
+
+  
+  ::placeholder
+  {
+    font-size: 200;
+  }
+
+ 
+ form {
+display: block;
+margin-top: 0em;
+margin-left:18rem ;
+}
