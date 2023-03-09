@@ -29,7 +29,7 @@ def signup(request: Request,username:str=Form(...),email:str=Form(...),password:
     hashed_password = hash_password(password)
     print(hashed_password)
     
-    users = db["users"].find_one({"Email": email})
+    users = db["users"].find_one({"Email": email}) 
     try:
       if not users:
             signup_collection.insert_one({"Username": username, 'Email': email,"Password": hashed_password})

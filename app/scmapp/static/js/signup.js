@@ -69,11 +69,11 @@ function verify()
     }
     else if(password!=confirmpassword)
     {
-      document.getElementById("cpassMsg").innerHTML = "Password not Matched";
+      document.getElementById("passMsg").innerHTML = "Password not Matched!";
       return false;
     }
     else{
-      document.getElementById("cpassMsg").innerHTML = "Password not Matched";
+      document.getElementById("cpassMsg").innerHTML = "Password not Matched!";
     }
 }
 
