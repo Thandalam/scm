@@ -73,7 +73,7 @@ function verify()
       return false;
     }
     else{
-      document.getElementById("cpassMsg").innerHTML = "Password not Matched!";
+      document.getElementById("cpassMsg").innerHTML = "";
     }
 }
 
@@ -103,33 +103,3 @@ function ValidateEmail(inputText)
   }
 }
 
-
-  // else
-  // {
-  //   document.getElementById("emailMsg").innerHTML = "Email not Valid!";
-  //   return false;
-  // }
-
-// passwordInput.addEventListener("input", function() {
-//   if (passwordInput.validity.patternMismatch) {
-//     passwordInput.setCustomValidity("Password must contain at least 8 characters, including a lowercase letter, an uppercase letter, a number, and a special character (@, #, $, %, ^, &, +, =).");
-//   }
-//        else {
-//             alert("Succesfully signed");
-          
-            
-//           }
-          
-//         })
-//       }
-//       function matchPassword() {  
-//         var pw1 = document.getElementById("pswd1");  
-//         var pw2 = document.getElementById("pswd2");  
-//         if(pw1 != pw2)  
-//         {   
-//           alert("Passwords did not match");  
-//         } else {  
-//           alert("Password created successfully");  
-//         }  
-//       }  
-      

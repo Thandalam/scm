@@ -1,4 +1,4 @@
-from kafka import KafkaProducer
+from kafka.producer import KafkaProducer
 import socket
 from json import dumps
 import json
@@ -18,8 +18,8 @@ bootstrapserver = (os.getenv('bootstrapserver'))
 
 
 #Configuring server, port for the host
-HOST_SERVER = socket.gethostbyname('socket')
-# HOST_SERVER = socket.gethostbyname('localhost')
+# HOST_SERVER = socket.gethostbyname('socket')
+HOST_SERVER = socket.gethostbyname('localhost')
 
 
 ADDR = (HOST_SERVER,PORT)

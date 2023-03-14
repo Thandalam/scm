@@ -17,8 +17,8 @@ DISCONNECT_MESSAGE = 'DISCONNECT'
 
 #Configuring the server, port for host
 try:
-    HOST_SERVER = socket.gethostbyname('socket')
-    # HOST_SERVER = socket.gethostbyname('localhost')
+    # HOST_SERVER = socket.gethostbyname('socket')
+    HOST_SERVER = socket.gethostbyname('localhost')
 
     ADDR = (HOST_SERVER, PORT)
 

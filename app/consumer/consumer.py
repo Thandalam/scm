@@ -30,7 +30,7 @@ for message in consumer:
     if(message.value!=None):
         data = message.value
         devicedata_collection.insert_one(data)
-        print("********data stored in db*********")
+       
 
     else:
         continue

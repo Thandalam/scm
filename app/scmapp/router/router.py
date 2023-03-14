@@ -8,6 +8,7 @@ from passlib.context import CryptContext # For password hashing and verification
 from router import router
 from models.models import signup,Createshipment
 
+
 from config import signup_collection,shipment_collection,db
 router = APIRouter()
 
@@ -37,6 +38,8 @@ def signup(request: Request,username:str=Form(...),email:str=Form(...),password:
     except Exception as e:
         print(e)
     return templates.TemplateResponse("signup1.html", {"request": request, "message": "user already exists"})
+
+
 @router.get("/",response_class=HTMLResponse)
 def login(request: Request):
      return templates.TemplateResponse("login.html",{"request": request})
@@ -77,7 +80,11 @@ def post(request: Request,Shipment_invoice_number:str=Form(...),Container_number
 
     shipments = Createshipment ( shipment_invoice_number = Shipment_invoice_number , container_number = Container_number, description = Description , route_details = Route_details,goods_type = Goods_type, device= Device, expected_Delivery_Date = Expected_Delivary_Date , po_number = Po_number,delivery_date =Delivery_number , ndcnumber= Ndc_number, batch_id= Batch_id,  serialnumberofgoods= Serialnumberofgoods)
     shipment_collection.insert_one(dict(shipments))
+#     Shipment_invoice_number =shipment_collection.find_one({"Shipment_invoice_number":Shipment_invoice_number})
+    
+     # shipment_collection.insert_one(dict(shipments))
     return templates.TemplateResponse("createshipment.html",{"request": request,"message":"Shipment  was created succesfully"})
+    
 # To store the device data in mongidb
 @router.get('/DeviceData', response_class=HTMLResponse, name="DeviceData")
 async def createshipment(request: Request):
@@ -86,8 +93,11 @@ async def createshipment(request: Request):
     print(createshipment_all)
     print("show data")
     for i in createshipment_all:
+        
         createshipment.append(i)
         print(createshipment_all)
+        print(i["Device_ID"])
+    
     return templates.TemplateResponse("DeviceData.html", {"request": request, "createshipment": createshipment})
 
 ## ************** Devicedata API END *********##########

@@ -11,10 +11,12 @@ width: 342px;
 height: 630px;
 margin:auto;
 /* background-color:#ffffff7a; */
-background-color:#f0f8ff94;
+background-color:#ffffff8f;
 margin-top: 67px;
 border-radius: 10% 10%;
 margin-top: 20px;
+border: 3px solid red;
+
 
 /* border: 2px solid darkblue; */
 
@@ -38,6 +40,12 @@ text-align: center;
 h1 {
 text-align: center;
 padding-top: 15px;
+color: blueviolet;
+}
+h2{
+    text-align: center;
+    padding-top: 15px;
+    color: deepskyblue;
 }
 
 form {

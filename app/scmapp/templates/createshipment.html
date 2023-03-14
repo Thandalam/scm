@@ -22,19 +22,19 @@
          
           <!-- shipment field -->
          
-            <label> Shipment_invoice_number</label>
+            <label> Shipment invoice number</label>
             <input type="number" name="Shipment_invoice_number"class="numbers" placeholder="Shipment/invoiceNumber" id="shipment_invoice_number"><br>
            
            
            <!-- container field -->
-            <label>Container_Number</label>
+            <label>Container Number</label>
             <input type="number"name ="Container_number" class="numbers"placeholder="Container Number" id="container_number"><br>
            
             <!-- description field -->
             <label>Description</label>
-            <input type="text" class="input" name ="Description" placeholder="Shipment Description" onkeypress="return /[0-9a-zA-Z]/i.test(event.key)" id="description"><br>
+            <input type="text" class="input" name ="Description" placeholder="Shipment Description" onkeypress="return /^[0-9a-zA-Z ]+$/i.test(event.key)" id="description"><br>
             <!-- route details -->
-            <label>Route_Details</label>
+            <label>Route Details</label>
 
             <select name="Route_details" id="route_details" placeholder="Route Details">
               <option value="SelectRoute">SelectRoute</option>
@@ -43,7 +43,7 @@
               <option value="Tirupati">Tirupati</option>
             </select><br>
             <!-- goods details -->
-            <label>Goods_Type</label>
+            <label>Goods Type</label>
 
             <select name="Goods_type" id="goods_type" placeholder="GoodsType">
               <option value="Goods Type">Goods Type</option>
@@ -64,20 +64,20 @@
               <option value="5040">5040</option>
             
             </select><br>
-            <label for="Expected Delivery Date">Delivery_date</label>
+            <label for="Expected Delivery Date">Delivery date</label>
 
             <input type="date" id="start" name="Expected_Delivary_Date"
              Expected_Delivery_Date="Expected_Delivery_Date" value="2023-05"><br>
-            <label> Po_Number</label>
+            <label> Po Number</label>
                 <input type="number" name="Po_number"class="numbers" placeholder="Po Number" id="po_number"><br>
                
-            <label>Delivery_number</label>
+            <label>Delivery number</label>
                 <input type="number" name="Delivery_number"class="numbers" placeholder="Delivery Number" id="delivary_number"><br>
                 
-            <label>NDC_Number</label>
+            <label>NDC Number</label>
                 <input type="number" name="Ndc_number"class="numbers" placeholder="Ndc Number" id="ndcnumber"><br>
                 
-            <label>Batch_Id</label>
+            <label>Batch Id</label>
                 <input type="number" name="Batch_id"class="numbers" placeholder="Batch Id" id="batch_id"><br>
              
             <label>Serialnumberofgoods </label>
